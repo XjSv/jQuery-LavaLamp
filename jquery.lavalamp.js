@@ -446,7 +446,7 @@ jQuery.fn.lavaLamp = function(o) {
 				ml = (getInt($selected.css('marginLeft')));
 				mt = (getInt($selected.css('marginTop')));
 			}
-			$back.css({ 'left': $selected.position().left+ml, 'top': $selected.position().top+mt, 'width': $selected.outerWidth()-bx, 'height': $selected.outerHeight()-by }); 
+			$back.css({ 'left': $selected.position().left+ml, 'top': $selected.position().top+mt, 'width': $selected.outerWidth(true)-bx, 'height': $selected.outerHeight(true)-by }); 
 		}
 
 		// after we leave the container element, move back to default/last clicked element
@@ -485,8 +485,8 @@ jQuery.fn.lavaLamp = function(o) {
 			var dims = {
 				'left': $el.position().left+ml,
 				'top': $el.position().top+mt,
-				'width': $el.outerWidth()-bx,
-				'height': $el.outerHeight()-by
+				'width': $el.outerWidth(true)-bx,
+				'height': $el.outerHeight(true)-by
 			};
 			
 			$back.stop().animate(dims, o.speed, o.fx, function () {
